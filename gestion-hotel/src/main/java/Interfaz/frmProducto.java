@@ -91,7 +91,7 @@ public class frmProducto extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (!txtidproducto.getText().equals("")){
-                    int confirmacion = JOptionPane.showConfirmDialog(rootPane," ¿Está seguro de eliminar el producto ?","Confirmar",2);
+                    int confirmacion = JOptionPane.showConfirmDialog(rootPane," ¿Está seguro de eliminar el producto?","Confirmar",2);
 
                     //0 es que confirmo en el cuadro de dialogo por lo que busca el objeto y lo elimina
                     if (confirmacion==0){
@@ -184,14 +184,14 @@ public class frmProducto extends JFrame {
             }
         });
 
-
+        txtbuscar.setToolTipText("Busqueda por nombre de producto");
     }
 
     public static void main(String[] args) {
         frmProducto screen = new frmProducto();
         screen.setContentPane(screen.frmProducto);
         screen.setTitle("Producto");
-        screen.setBounds(100, 150, 1200, 500);
+        screen.pack();
         screen.setVisible(true);
         screen.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
