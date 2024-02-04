@@ -18,7 +18,7 @@ public class fhabitacion {
     public DefaultTableModel mostrar(String buscar){
         DefaultTableModel modelo;
         //titulos que mostraré en la tabla
-        String[] titulos={"ID","Número","Descripción","Caracteristicas","Precio","Estado","Tipo de habitación"};
+        String[] titulos={"ID","Número","Piso","Descripción","Caracteristicas","Precio","Estado","Tipo de habitación"};
         //registros de la tabla a almacenar
         String[] registro = new String [8];
 
@@ -26,7 +26,7 @@ public class fhabitacion {
         modelo= new DefaultTableModel(null,titulos);
 
         //SQL de busqueda en la tabla
-        sSQL="select * from habitacion where piso like '%"+buscar+"%' order bay idhabitacion";
+        sSQL="select * from habitacion where piso like '%"+buscar+"%' order by idhabitacion";
 
         try {
             //ejecuto el sql dentro de un try/catch
@@ -57,7 +57,7 @@ public class fhabitacion {
     }
 
     public boolean insertar (vhabitacion dts){
-        sSQL="insert into habitacion(numero, piso, descripcion,caracteristicas,precio_diario,estado,tipo_habitacion"+
+        sSQL="insert into habitacion(numero, piso, descripcion,caracteristicas,precio_diario,estado,tipo_habitacion)"+
                 "values(?,?,?,?,?,?,?)";
         try {
             PreparedStatement pst= cn.prepareStatement(sSQL);
