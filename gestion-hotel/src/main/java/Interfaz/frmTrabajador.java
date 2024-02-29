@@ -17,6 +17,7 @@ public class frmTrabajador extends JFrame{
     private JTextField txtidpersona;
     private JTextField txtnombre;
     private JButton btncancelar;
+
     private JButton btnguardar;
     private JButton btnnuevo;
     private JTextField txtemail;
@@ -44,6 +45,7 @@ public class frmTrabajador extends JFrame{
 
         mostrar("");
         inhabilitar();
+        setIconsButtons();
 
         //codigo de listeners
 
@@ -59,32 +61,32 @@ public class frmTrabajador extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (txtnombre.getText().length()==0){
-                    JOptionPane.showConfirmDialog(rootPane,"Debe ingresar el nombre del trabajador");
+                    JOptionPane.showConfirmDialog(getParent(),"Debe ingresar el nombre del trabajador");
                     txtnombre.requestFocus();
                     return;
                 }
                 if (txtapellido.getText().length()==0) {
-                    JOptionPane.showConfirmDialog(rootPane, "Debe ingresar el apellido del trabajador");
+                    JOptionPane.showConfirmDialog(getParent(), "Debe ingresar el apellido del trabajador");
                     txtapellido.requestFocus();
                     return;
                 }
                 if (txtnumero.getText().length()==0) {
-                    JOptionPane.showConfirmDialog(rootPane, "Debe ingresar el número de documento del trabajador");
+                    JOptionPane.showConfirmDialog(getParent(), "Debe ingresar el número de documento del trabajador");
                     txtnumero.requestFocus();
                     return;
                 }
                 if (txtsueldo.getText().length()==0) {
-                    JOptionPane.showConfirmDialog(rootPane, "Debe ingresar el sueldo del trabajador");
+                    JOptionPane.showConfirmDialog(getParent(), "Debe ingresar el sueldo del trabajador");
                     txtsueldo.requestFocus();
                     return;
                 }
                 if (txtlogin.getText().length()==0) {
-                    JOptionPane.showConfirmDialog(rootPane, "Debe ingresar el usuario del trabajador");
+                    JOptionPane.showConfirmDialog(getParent(), "Debe ingresar el usuario del trabajador");
                     txtlogin.requestFocus();
                     return;
                 }
                 if (txtpassword.getText().length()==0) {
-                    JOptionPane.showConfirmDialog(rootPane, "Debe ingresar la clave del trabajador");
+                    JOptionPane.showConfirmDialog(getParent(), "Debe ingresar la clave del trabajador");
                     txtpassword.requestFocus();
                     return;
                 }
@@ -110,7 +112,7 @@ public class frmTrabajador extends JFrame{
 
                 if (accion.equals("guardar")){
                     if (func.insertar(dts)){
-                        JOptionPane.showMessageDialog(rootPane,"El trabajador fue registrado satisfactoriamente");
+                        JOptionPane.showMessageDialog(getParent(),"El trabajador fue registrado satisfactoriamente");
                         mostrar("");
                         inhabilitar();
                     }
@@ -118,7 +120,7 @@ public class frmTrabajador extends JFrame{
                     dts.setIdpersona(Integer.parseInt(txtidpersona.getText()));
 
                     if (func.editar(dts)){
-                        JOptionPane.showMessageDialog(rootPane,"El trabajador fue editado satisfactoriamente");
+                        JOptionPane.showMessageDialog(getParent(),"El trabajador fue editado satisfactoriamente");
                         mostrar("");
                         inhabilitar();
                     }
@@ -131,7 +133,7 @@ public class frmTrabajador extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (!txtidpersona.getText().equals("")){
-                    int confirmacion = JOptionPane.showConfirmDialog(rootPane," ¿Está seguro de eliminar al trabajador?","Confirmar",2);
+                    int confirmacion = JOptionPane.showConfirmDialog(getParent()," ¿Está seguro de eliminar al trabajador?","Confirmar",2);
 
                     if (confirmacion==0){
                         fcliente func= new fcliente();
@@ -164,7 +166,7 @@ public class frmTrabajador extends JFrame{
         btnsalir.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int opcion= JOptionPane.showConfirmDialog(rootPane,"¿Desea salir del sistema?","Salir",2);
+                int opcion= JOptionPane.showConfirmDialog(getParent(),"¿Desea salir del sistema?","Salir",2);
 
                 if (opcion==0) {
                     frmTrabajador.this.dispose();
@@ -340,7 +342,7 @@ public class frmTrabajador extends JFrame{
 
             lblregistros.setText("Total registros: " + Integer.toString(func.totalregistros));
         } catch (Exception e) {
-            JOptionPane.showConfirmDialog(rootPane, e);
+            JOptionPane.showConfirmDialog(getParent(), e);
         }
     }
 
@@ -360,5 +362,21 @@ public class frmTrabajador extends JFrame{
 
         txtbuscar.setText("");
         cbotipo.setSelectedIndex(0);
+    }
+
+    private void setIconsButtons(){
+        ImageIcon iconEliminar = new ImageIcon("gestion-hotel/src/main/java/Files/basura.png");
+        ImageIcon iconCancelar= new ImageIcon("gestion-hotel/src/main/java/Files/cancelar.png");
+        ImageIcon iconGuardar= new ImageIcon("gestion-hotel/src/main/java/Files/disquete.png");
+        ImageIcon iconBuscar= new ImageIcon("gestion-hotel/src/main/java/Files/lupa.png");
+        ImageIcon iconNuevo= new ImageIcon("gestion-hotel/src/main/java/Files/mas.png");
+        ImageIcon iconSalir= new ImageIcon("gestion-hotel/src/main/java/Files/salida.png");
+
+        btneliminar.setIcon(iconEliminar);
+        btncancelar.setIcon(iconCancelar);
+        btnguardar.setIcon(iconGuardar);
+        btnbuscar.setIcon(iconBuscar);
+        btnnuevo.setIcon(iconNuevo);
+        btnsalir.setIcon(iconSalir);
     }
 }

@@ -34,6 +34,7 @@ public class frmProducto extends JFrame {
 
         mostrar("");
         inhabilitar();
+        setIconsButtons();
 
         //codigo de listeners
 
@@ -49,12 +50,12 @@ public class frmProducto extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (txtnombre.getText().length()==0){
-                    JOptionPane.showConfirmDialog(rootPane,"Debe ingresar un nombre de producto");
+                    JOptionPane.showConfirmDialog(getParent(),"Debe ingresar un nombre de producto");
                     txtnombre.requestFocus();
                     return;
                 }
                 if (txtprecio.getText().length()==0) {
-                    JOptionPane.showConfirmDialog(rootPane, "Debe ingresar un precio por el producto");
+                    JOptionPane.showConfirmDialog(getParent(), "Debe ingresar un precio por el producto");
                     txtprecio.requestFocus();
                     return;
                 }
@@ -70,7 +71,7 @@ public class frmProducto extends JFrame {
 
                 if (accion.equals("guardar")){
                     if (func.insertar(dts)){
-                        JOptionPane.showMessageDialog(rootPane,"El producto fue registrado satisfactoriamente");
+                        JOptionPane.showMessageDialog(getParent(),"El producto fue registrado satisfactoriamente");
                         mostrar("");
                         inhabilitar();
                     }
@@ -78,7 +79,7 @@ public class frmProducto extends JFrame {
                     dts.setIdproducto(Integer.parseInt(txtidproducto.getText()));
 
                     if (func.editar(dts)){
-                        JOptionPane.showMessageDialog(rootPane,"El producto fue editado satisfactoriamente");
+                        JOptionPane.showMessageDialog(getParent(),"El producto fue editado satisfactoriamente");
                         mostrar("");
                         inhabilitar();
                     }
@@ -91,7 +92,7 @@ public class frmProducto extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (!txtidproducto.getText().equals("")){
-                    int confirmacion = JOptionPane.showConfirmDialog(rootPane," ¿Está seguro de eliminar el producto?","Confirmar",2);
+                    int confirmacion = JOptionPane.showConfirmDialog(getParent()," ¿Está seguro de eliminar el producto?","Confirmar",2);
 
                     //0 es que confirmo en el cuadro de dialogo por lo que busca el objeto y lo elimina
                     if (confirmacion==0){
@@ -125,7 +126,7 @@ public class frmProducto extends JFrame {
         btnsalir.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int opcion= JOptionPane.showConfirmDialog(rootPane,"¿Desea salir del sistema?","Salir",2);
+                int opcion= JOptionPane.showConfirmDialog(getParent(),"¿Desea salir del sistema?","Salir",2);
 
                 if (opcion==0) {
                     frmProducto.this.dispose();
@@ -247,7 +248,7 @@ public class frmProducto extends JFrame {
 
             lblregistros.setText("Total registros: " + Integer.toString(func.totalregistros));
         } catch (Exception e) {
-            JOptionPane.showConfirmDialog(rootPane, e);
+            JOptionPane.showConfirmDialog(getParent(), e);
         }
     }
 
@@ -258,5 +259,21 @@ public class frmProducto extends JFrame {
         txtnombre.setText("");
         txtbuscar.setText("");
         cbounidad.setSelectedIndex(0);
+    }
+
+    private void setIconsButtons(){
+        ImageIcon iconEliminar = new ImageIcon("gestion-hotel/src/main/java/Files/basura.png");
+        ImageIcon iconCancelar= new ImageIcon("gestion-hotel/src/main/java/Files/cancelar.png");
+        ImageIcon iconGuardar= new ImageIcon("gestion-hotel/src/main/java/Files/disquete.png");
+        ImageIcon iconBuscar= new ImageIcon("gestion-hotel/src/main/java/Files/lupa.png");
+        ImageIcon iconNuevo= new ImageIcon("gestion-hotel/src/main/java/Files/mas.png");
+        ImageIcon iconSalir= new ImageIcon("gestion-hotel/src/main/java/Files/salida.png");
+
+        btneliminar.setIcon(iconEliminar);
+        btncancelar.setIcon(iconCancelar);
+        btnguardar.setIcon(iconGuardar);
+        btnbuscar.setIcon(iconBuscar);
+        btnnuevo.setIcon(iconNuevo);
+        btnsalir.setIcon(iconSalir);
     }
 }

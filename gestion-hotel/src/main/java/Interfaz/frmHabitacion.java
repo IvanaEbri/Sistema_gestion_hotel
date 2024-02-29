@@ -7,7 +7,7 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.*;
 
-public class frmHabitacion extends JFrame {
+public class frmHabitacion extends JInternalFrame {
     private JPanel frmHabitacion;
     private JTable tablalistado;
     private JTextField txtbuscar;
@@ -33,6 +33,7 @@ public class frmHabitacion extends JFrame {
 
         mostrar("");
         inhabilitar();
+        setIconsButtons();
 
         btnnuevo.addActionListener(new ActionListener() {
             @Override
@@ -46,12 +47,12 @@ public class frmHabitacion extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (txtnumero.getText().length()==0){
-                    JOptionPane.showConfirmDialog(rootPane,"Debe ingresar un número de habitación");
+                    JOptionPane.showConfirmDialog(getParent(),"Debe ingresar un número de habitación");
                     txtnumero.requestFocus();
                     return;
                 }
                 if (txtprecio.getText().length()==0) {
-                    JOptionPane.showConfirmDialog(rootPane, "Debe ingresar un precio por la habitación");
+                    JOptionPane.showConfirmDialog(getParent(), "Debe ingresar un precio por la habitación");
                     txtprecio.requestFocus();
                     return;
                 }
@@ -80,7 +81,7 @@ public class frmHabitacion extends JFrame {
                 //si la accion es guardar un nuevo registro guarda y mmuestra mensaje (retornará false si hubo un problema)
                 if (accion.equals("guardar")){
                     if (func.insertar(dts)){
-                        JOptionPane.showMessageDialog(rootPane,"La habitación fue registrada satisfactoriamente");
+                        JOptionPane.showMessageDialog(getParent(),"La habitación fue registrada satisfactoriamente");
                         mostrar("");
                         inhabilitar();
                     }
@@ -89,7 +90,7 @@ public class frmHabitacion extends JFrame {
                     dts.setIdhabitacion(Integer.parseInt(txtidhabitacion.getText()));
 
                     if (func.editar(dts)){
-                        JOptionPane.showMessageDialog(rootPane,"La habitación fue editada satisfactoriamente");
+                        JOptionPane.showMessageDialog(getParent(),"La habitación fue editada satisfactoriamente");
                         mostrar("");
                         inhabilitar();
                     }
@@ -103,7 +104,7 @@ public class frmHabitacion extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 //si el id es distinto a vacio consulto si quiere eliminar
                 if (!txtidhabitacion.getText().equals("")){
-                    int confirmacion = JOptionPane.showConfirmDialog(rootPane," ¿Está seguro de eliminar la habitación?","Confirmar",2);
+                    int confirmacion = JOptionPane.showConfirmDialog(getParent()," ¿Está seguro de eliminar la habitación?","Confirmar",2);
 
                     //0 es que confirmo en el cuadro de dialogo por lo que busca el objeto y lo elimina
                     if (confirmacion==0){
@@ -137,7 +138,7 @@ public class frmHabitacion extends JFrame {
         btnsalir.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int opcion= JOptionPane.showConfirmDialog(rootPane,"¿Desea salir del sistema?","Salir",2);
+                int opcion= JOptionPane.showConfirmDialog(getParent(),"¿Desea salir del sistema?","Salir",2);
 
                 if (opcion==0) {
                     frmHabitacion.this.dispose();
@@ -282,7 +283,7 @@ public class frmHabitacion extends JFrame {
             //instancio la logica de la habitacion para pasarsela a la tabla de la interfaz
             DefaultTableModel modelo;
             fhabitacion func = new fhabitacion();
-             modelo = func.mostrar(buscar);
+            modelo = func.mostrar(buscar);
 
             tablalistado.setModel(modelo);
             tablalistado.getTableHeader().setReorderingAllowed(false);
@@ -290,7 +291,7 @@ public class frmHabitacion extends JFrame {
 
             lblregistros.setText("Total registros: " + Integer.toString(func.totalregistros));
         } catch (Exception e) {
-            JOptionPane.showConfirmDialog(rootPane, e);
+            JOptionPane.showConfirmDialog(getParent(), e);
         }
     }
 
@@ -304,5 +305,21 @@ public class frmHabitacion extends JFrame {
         cbopiso.setSelectedIndex(0);
         cbotipo.setSelectedIndex(0);
         cboestado.setSelectedIndex(0);
+    }
+
+    private void setIconsButtons(){
+        ImageIcon iconEliminar = new ImageIcon("gestion-hotel/src/main/java/Files/basura.png");
+        ImageIcon iconCancelar= new ImageIcon("gestion-hotel/src/main/java/Files/cancelar.png");
+        ImageIcon iconGuardar= new ImageIcon("gestion-hotel/src/main/java/Files/disquete.png");
+        ImageIcon iconBuscar= new ImageIcon("gestion-hotel/src/main/java/Files/lupa.png");
+        ImageIcon iconNuevo= new ImageIcon("gestion-hotel/src/main/java/Files/mas.png");
+        ImageIcon iconSalir= new ImageIcon("gestion-hotel/src/main/java/Files/salida.png");
+
+        btneliminar.setIcon(iconEliminar);
+        btncancelar.setIcon(iconCancelar);
+        btnguardar.setIcon(iconGuardar);
+        btnbuscar.setIcon(iconBuscar);
+        btnnuevo.setIcon(iconNuevo);
+        btnsalir.setIcon(iconSalir);
     }
 }
