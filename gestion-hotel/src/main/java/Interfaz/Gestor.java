@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/MDIApplication.java to edit this template
  */
-package InterfazR;
+package Interfaz;
 
 import javax.swing.JOptionPane;
 
@@ -65,6 +65,7 @@ public class Gestor extends javax.swing.JFrame {
         mnuarchivo.setMnemonic('e');
         mnuarchivo.setText("Archivo");
 
+        habitacionMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         habitacionMenuItem.setMnemonic('t');
         habitacionMenuItem.setText("Habitaciones");
         habitacionMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -74,6 +75,7 @@ public class Gestor extends javax.swing.JFrame {
         });
         mnuarchivo.add(habitacionMenuItem);
 
+        productoMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         productoMenuItem.setMnemonic('y');
         productoMenuItem.setText("Productos");
         productoMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -89,10 +91,12 @@ public class Gestor extends javax.swing.JFrame {
         mnureserva.setMnemonic('h');
         mnureserva.setText("Reserva");
 
+        reservasyclientesMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         reservasyclientesMenuItem.setMnemonic('c');
         reservasyclientesMenuItem.setText("Reservas y Consumos");
         mnureserva.add(reservasyclientesMenuItem);
 
+        clienteMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         clienteMenuItem.setMnemonic('a');
         clienteMenuItem.setText("Clientes");
         clienteMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -102,6 +106,7 @@ public class Gestor extends javax.swing.JFrame {
         });
         mnureserva.add(clienteMenuItem);
 
+        pagoMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         pagoMenuItem.setText("Pagos");
         mnureserva.add(pagoMenuItem);
 
@@ -114,6 +119,7 @@ public class Gestor extends javax.swing.JFrame {
         mnuconfig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/fabricacion.png"))); // NOI18N
         mnuconfig.setText("Configuraciones");
 
+        usuariosMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         usuariosMenuItem.setText("Usuarios y Accesos");
         usuariosMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,9 +137,11 @@ public class Gestor extends javax.swing.JFrame {
         mnuayuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/informacion.png"))); // NOI18N
         mnuayuda.setText("Ayuda");
 
+        acercaMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         acercaMenuItem.setText("Acerca de..");
         mnuayuda.add(acercaMenuItem);
 
+        ayudaMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         ayudaMenuItem.setText("Ayuda");
         mnuayuda.add(ayudaMenuItem);
 
@@ -163,7 +171,7 @@ public class Gestor extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        pack();
+        setBounds(0, 0, 816, 839);
     }// </editor-fold>//GEN-END:initComponents
 
     private void habitacionMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_habitacionMenuItemActionPerformed
