@@ -272,10 +272,22 @@ public class frmlogin extends javax.swing.JFrame {
             tablalistado.setModel(modelo);
             
             if( func.totalregistros>0){
+                this.dispose();
                 Gestor aplicacion = new Gestor();
                 aplicacion.toFront();
                 aplicacion.setVisible(true);
-                this.dispose();
+                
+                
+                Gestor.lblidpersona.setText(tablalistado.getValueAt(0,0).toString());
+                Gestor.lblnombre.setText(tablalistado.getValueAt(0,1).toString());
+                Gestor.lblapellido.setText(tablalistado.getValueAt(0,2).toString());
+                Gestor.lblacceso.setText(tablalistado.getValueAt(0,3).toString());
+                
+                if (!Gestor.lblacceso.getText().equals("Administrador")){
+                    Gestor.mnuarchivo.setEnabled(false);
+                    Gestor.mnuconfig.setEnabled(false);
+                                       
+                }
             } else {
                 this.lblincorrecto.setVisible(true);
                 this.txtusuario.requestFocus();

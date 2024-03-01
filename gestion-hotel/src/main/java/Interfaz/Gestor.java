@@ -33,6 +33,10 @@ public class Gestor extends javax.swing.JFrame {
 
         jMenuItem1 = new javax.swing.JMenuItem();
         escritorio = new javax.swing.JDesktopPane();
+        lblidpersona = new javax.swing.JLabel();
+        lblnombre = new javax.swing.JLabel();
+        lblapellido = new javax.swing.JLabel();
+        lblacceso = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         mnusistema = new javax.swing.JMenu();
         mnuarchivo = new javax.swing.JMenu();
@@ -55,6 +59,26 @@ public class Gestor extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("gestor"); // NOI18N
+
+        lblidpersona.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblidpersona.setText("jLabel1");
+        escritorio.add(lblidpersona);
+        lblidpersona.setBounds(30, 30, 210, 16);
+
+        lblnombre.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblnombre.setText("jLabel2");
+        escritorio.add(lblnombre);
+        lblnombre.setBounds(30, 70, 210, 16);
+
+        lblapellido.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblapellido.setText("jLabel3");
+        escritorio.add(lblapellido);
+        lblapellido.setBounds(30, 110, 210, 16);
+
+        lblacceso.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblacceso.setText("jLabel4");
+        escritorio.add(lblacceso);
+        lblacceso.setBounds(30, 150, 210, 16);
 
         mnusistema.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/work-from-home.png"))); // NOI18N
         mnusistema.setMnemonic('f');
@@ -162,11 +186,14 @@ public class Gestor extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 788, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -252,10 +279,14 @@ public class Gestor extends javax.swing.JFrame {
     private javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenuItem habitacionMenuItem;
     private javax.swing.JMenuItem jMenuItem1;
+    public static javax.swing.JLabel lblacceso;
+    public static javax.swing.JLabel lblapellido;
+    public static javax.swing.JLabel lblidpersona;
+    public static javax.swing.JLabel lblnombre;
     private javax.swing.JMenuBar menuBar;
-    private javax.swing.JMenu mnuarchivo;
+    public static javax.swing.JMenu mnuarchivo;
     private javax.swing.JMenu mnuayuda;
-    private javax.swing.JMenu mnuconfig;
+    public static javax.swing.JMenu mnuconfig;
     private javax.swing.JMenu mnuconsultas;
     private javax.swing.JMenu mnuherr;
     private javax.swing.JMenu mnureserva;
