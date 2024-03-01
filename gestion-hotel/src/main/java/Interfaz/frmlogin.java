@@ -7,6 +7,7 @@ package Interfaz;
 import Datos.vtrabajador;
 import Logica.ftrabajador;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -20,8 +21,9 @@ public class frmlogin extends javax.swing.JFrame {
      */
     public frmlogin() {
         initComponents();
-        this.setTitle("Inicie sesión");
-        //this.setLocationRelativeTo(null);
+        this.setVisible(true);
+        this.setTitle("Inicio de sesión");
+        this.setLocationRelativeTo(null);
         
     }
 
@@ -42,29 +44,49 @@ public class frmlogin extends javax.swing.JFrame {
         btningresar = new javax.swing.JButton();
         btnsalir = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        table = new javax.swing.JScrollPane();
         tablalistado = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
         lblincorrecto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jLabel1.setText("Usuario:");
 
+        txtusuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtusuarioActionPerformed(evt);
+            }
+        });
+
         jLabel2.setText("Contraseña:");
 
-        txtpassword.setText("jPasswordField1");
+        txtpassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtpasswordActionPerformed(evt);
+            }
+        });
 
-        btningresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/llave.png"))); // NOI18N
         btningresar.setText("Ingresar");
         btningresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btningresarActionPerformed(evt);
             }
         });
+        btningresar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                btningresarKeyTyped(evt);
+            }
+        });
 
         btnsalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/salida.png"))); // NOI18N
         btnsalir.setText("Salir");
+        btnsalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsalirActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Inicie sesión para ingresar al sistema");
 
@@ -79,9 +101,9 @@ public class frmlogin extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(tablalistado);
+        table.setViewportView(tablalistado);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/llave-de-la-casa.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/informacion.png"))); // NOI18N
 
         lblincorrecto.setForeground(new java.awt.Color(255, 0, 51));
         lblincorrecto.setText("El usuario y/o contraseña es incorrecto");
@@ -97,7 +119,7 @@ public class frmlogin extends javax.swing.JFrame {
                         .addGroup(frmloginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel2)
                             .addComponent(jLabel1)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(table, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(frmloginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(frmloginLayout.createSequentialGroup()
@@ -136,7 +158,7 @@ public class frmlogin extends javax.swing.JFrame {
                         .addComponent(lblincorrecto)
                         .addGap(18, 18, 18)
                         .addGroup(frmloginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(table, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(frmloginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(btningresar)
                                 .addComponent(btnsalir)))))
@@ -158,32 +180,25 @@ public class frmlogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btningresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btningresarActionPerformed
-        //al iniciar la sesion verifico la existencia del usuario y estado
-        try {
-            DefaultTableModel modelo;
-            ftrabajador func = new ftrabajador();
-            vtrabajador dts = new vtrabajador();
-            
-            dts.setLogin(txtusuario.getText());
-            dts.setPassword(txtpassword.getText());
-            
-            //configuro la tabla con los usuarios y password ingresados y la asigno
-            modelo = func.login(dts.getLogin(),dts.getPassword());
-            
-            tablalistado.setModel(modelo);
-            
-            if( func.totalregistros>0){
-                Gestor aplicacion = new Gestor();
-                aplicacion.toFront();
-                aplicacion.setVisible(true);
-                this.dispose();
-            } else {
-                this.lblincorrecto.setVisible(true);
-                this.txtusuario.requestFocus();
-            }
-        } catch (Exception e) {
-        }
+        this.ingresar();
     }//GEN-LAST:event_btningresarActionPerformed
+
+    private void txtusuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtusuarioActionPerformed
+        txtusuario.transferFocus();
+    }//GEN-LAST:event_txtusuarioActionPerformed
+
+    private void txtpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpasswordActionPerformed
+        txtpassword.transferFocus();
+    }//GEN-LAST:event_txtpasswordActionPerformed
+
+    private void btningresarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btningresarKeyTyped
+        this.ingresar();
+    }//GEN-LAST:event_btningresarKeyTyped
+
+    private void btnsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirActionPerformed
+        dispose();
+        System.exit(0);
+    }//GEN-LAST:event_btnsalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -216,11 +231,11 @@ public class frmlogin extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 frmlogin screen = new frmlogin();
-                screen.setContentPane(screen.frmlogin);
+
                 screen.pack();
                 screen.setVisible(true);
-                screen.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                screen.tablalistado.setVisible(false);
+                screen.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                screen.table.setVisible(false);
                 screen.lblincorrecto.setVisible(false);
             }
         });
@@ -234,10 +249,40 @@ public class frmlogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblincorrecto;
     private javax.swing.JTable tablalistado;
+    private javax.swing.JScrollPane table;
     private javax.swing.JPasswordField txtpassword;
     private javax.swing.JTextField txtusuario;
     // End of variables declaration//GEN-END:variables
+
+    private void ingresar (){
+        //al iniciar la sesion verifico la existencia del usuario y estado
+        try {
+            DefaultTableModel modelo;
+            ftrabajador func = new ftrabajador();
+            vtrabajador dts = new vtrabajador();
+            
+            dts.setLogin(txtusuario.getText());
+            dts.setPassword(txtpassword.getText());
+            
+            //configuro la tabla con los usuarios y password ingresados y la asigno
+            modelo = func.login(dts.getLogin(),dts.getPassword());
+            
+            tablalistado.setModel(modelo);
+            
+            if( func.totalregistros>0){
+                Gestor aplicacion = new Gestor();
+                aplicacion.toFront();
+                aplicacion.setVisible(true);
+                this.dispose();
+            } else {
+                this.lblincorrecto.setVisible(true);
+                this.txtusuario.requestFocus();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }

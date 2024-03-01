@@ -188,7 +188,7 @@ public class ftrabajador {
                 " t.acceso, t.login, t.password, t.estado"+
                 " from persona p inner join trabajador t on p.idpersona= t.idpersona"+
                 " where t.login='"+login+"' and t.password='"+password+
-                " and t.estado='A'";
+                "' and t.estado='A'";
 
         try {
             Statement st=cn.createStatement();
@@ -198,10 +198,10 @@ public class ftrabajador {
                 registro[0]=rs.getString("idpersona");
                 registro[1]=rs.getString("nombre");
                 registro[2]=rs.getString("apellido");
-                registro[4]=rs.getString("acceso");
-                registro[5]=rs.getString("login");
-                registro[6]=rs.getString("password");
-                registro[7]=rs.getString("estado");
+                registro[3]=rs.getString("acceso");
+                registro[4]=rs.getString("login");
+                registro[5]=rs.getString("password");
+                registro[6]=rs.getString("estado");
 
                 //añado la fila a la tabla
                 totalregistros=totalregistros+1;
