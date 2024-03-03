@@ -14,12 +14,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Ivana
  */
-public class frmlogin extends javax.swing.JFrame {
+public class frmLogin extends javax.swing.JFrame {
 
     /**
      * Creates new form frmlogin
      */
-    public frmlogin() {
+    public frmLogin() {
         initComponents();
         this.setVisible(true);
         this.setTitle("Inicio de sesión");
@@ -217,20 +217,21 @@ public class frmlogin extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmlogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmlogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmlogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmlogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                frmlogin screen = new frmlogin();
+                frmLogin screen = new frmLogin();
 
                 screen.pack();
                 screen.setVisible(true);
@@ -273,19 +274,19 @@ public class frmlogin extends javax.swing.JFrame {
             
             if( func.totalregistros>0){
                 this.dispose();
-                Gestor aplicacion = new Gestor();
+                frmInicio aplicacion = new frmInicio();
                 aplicacion.toFront();
                 aplicacion.setVisible(true);
                 
                 
-                Gestor.lblidpersona.setText(tablalistado.getValueAt(0,0).toString());
-                Gestor.lblnombre.setText(tablalistado.getValueAt(0,1).toString());
-                Gestor.lblapellido.setText(tablalistado.getValueAt(0,2).toString());
-                Gestor.lblacceso.setText(tablalistado.getValueAt(0,3).toString());
+                frmInicio.lblidpersona.setText(tablalistado.getValueAt(0,0).toString());
+                frmInicio.lblnombre.setText(tablalistado.getValueAt(0,1).toString());
+                frmInicio.lblapellido.setText(tablalistado.getValueAt(0,2).toString());
+                frmInicio.lblacceso.setText(tablalistado.getValueAt(0,3).toString());
                 
-                if (!Gestor.lblacceso.getText().equals("Administrador")){
-                    Gestor.mnuarchivo.setEnabled(false);
-                    Gestor.mnuconfig.setEnabled(false);
+                if (!frmInicio.lblacceso.getText().equals("Administrador")){
+                    frmInicio.mnuarchivo.setEnabled(false);
+                    frmInicio.mnuconfig.setEnabled(false);
                                        
                 }
             } else {

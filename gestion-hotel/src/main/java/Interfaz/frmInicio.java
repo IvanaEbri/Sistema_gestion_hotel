@@ -10,14 +10,14 @@ import javax.swing.JOptionPane;
  *
  * @author Ivana
  */
-public class Gestor extends javax.swing.JFrame {
+public class frmInicio extends javax.swing.JFrame {
 
     /**
      * Creates new form Gestor
      */
-    public Gestor() {
+    public frmInicio() {
         initComponents();
-        this.setExtendedState(Gestor.MAXIMIZED_BOTH);
+        this.setExtendedState(frmInicio.MAXIMIZED_BOTH);
         this.escritorio.setVisible(true);
         this.setTitle("Sistema de reserva de habitaciones y gestor de ventas");
     }
@@ -61,22 +61,22 @@ public class Gestor extends javax.swing.JFrame {
         setName("gestor"); // NOI18N
 
         lblidpersona.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblidpersona.setText("jLabel1");
+        lblidpersona.setText("ID");
         escritorio.add(lblidpersona);
         lblidpersona.setBounds(30, 30, 210, 16);
 
         lblnombre.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblnombre.setText("jLabel2");
+        lblnombre.setText("NOMBRE");
         escritorio.add(lblnombre);
         lblnombre.setBounds(30, 70, 210, 16);
 
         lblapellido.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblapellido.setText("jLabel3");
+        lblapellido.setText("APELLIDO");
         escritorio.add(lblapellido);
         lblapellido.setBounds(30, 110, 210, 16);
 
         lblacceso.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblacceso.setText("jLabel4");
+        lblacceso.setText("ACCESO");
         escritorio.add(lblacceso);
         lblacceso.setBounds(30, 150, 210, 16);
 
@@ -118,6 +118,16 @@ public class Gestor extends javax.swing.JFrame {
         reservasyclientesMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         reservasyclientesMenuItem.setMnemonic('c');
         reservasyclientesMenuItem.setText("Reservas y Consumos");
+        reservasyclientesMenuItem.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                reservasyclientesMenuItemMouseClicked(evt);
+            }
+        });
+        reservasyclientesMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reservasyclientesMenuItemActionPerformed(evt);
+            }
+        });
         mnureserva.add(reservasyclientesMenuItem);
 
         clienteMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_DOWN_MASK));
@@ -237,6 +247,19 @@ public class Gestor extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_mnusalirMouseClicked
 
+    private void reservasyclientesMenuItemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reservasyclientesMenuItemMouseClicked
+       
+    }//GEN-LAST:event_reservasyclientesMenuItemMouseClicked
+
+    private void reservasyclientesMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reservasyclientesMenuItemActionPerformed
+        frmReserva form = new frmReserva();
+        escritorio.add(form);
+        form.toFront();
+        form.setVisible(true);
+        frmReserva.txtidtrabajador.setText(lblidpersona.getText());
+        frmReserva.txtnombretrabajador.setText(lblnombre.getText()+" "+lblapellido.getText());
+    }//GEN-LAST:event_reservasyclientesMenuItemActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -254,20 +277,21 @@ public class Gestor extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Gestor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Gestor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Gestor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Gestor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Gestor().setVisible(true);
+                new frmInicio().setVisible(true);
             }
         });
     }
