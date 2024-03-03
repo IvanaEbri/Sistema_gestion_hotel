@@ -103,7 +103,7 @@ public class frmLogin extends javax.swing.JFrame {
         ));
         table.setViewportView(tablalistado);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/informacion.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/archivo.png"))); // NOI18N
 
         lblincorrecto.setForeground(new java.awt.Color(255, 0, 51));
         lblincorrecto.setText("El usuario y/o contraseña es incorrecto");

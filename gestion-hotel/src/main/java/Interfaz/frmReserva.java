@@ -85,6 +85,7 @@ public class frmReserva extends javax.swing.JInternalFrame {
         btnbuscar = new javax.swing.JToggleButton();
         btneliminar = new javax.swing.JToggleButton();
         btnsalir = new javax.swing.JToggleButton();
+        btnconsumo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setIconifiable(true);
@@ -389,6 +390,13 @@ public class frmReserva extends javax.swing.JInternalFrame {
             }
         });
 
+        btnconsumo.setText("Consumos");
+        btnconsumo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnconsumoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -396,21 +404,20 @@ public class frmReserva extends javax.swing.JInternalFrame {
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 602, Short.MAX_VALUE)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(lblregistros)
-                        .addContainerGap())
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtbuscar)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnbuscar)
-                        .addGap(18, 18, 18)
-                        .addComponent(btneliminar)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnsalir))))
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtbuscar)
+                .addGap(18, 18, 18)
+                .addComponent(btnbuscar)
+                .addGap(18, 18, 18)
+                .addComponent(btneliminar)
+                .addGap(18, 18, 18)
+                .addComponent(btnsalir))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(btnconsumo, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblregistros)
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -423,9 +430,12 @@ public class frmReserva extends javax.swing.JInternalFrame {
                     .addComponent(btneliminar)
                     .addComponent(btnsalir))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblregistros))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblregistros))
+                    .addComponent(btnconsumo, javax.swing.GroupLayout.Alignment.TRAILING)))
         );
 
         javax.swing.GroupLayout frmReservaLayout = new javax.swing.GroupLayout(frmReserva);
@@ -650,6 +660,18 @@ public class frmReserva extends javax.swing.JInternalFrame {
         form.setVisible(true);
     }//GEN-LAST:event_btnbuscaclienteMouseClicked
 
+    private void btnconsumoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnconsumoActionPerformed
+        int fila = tablalistado.getSelectedRow();
+        frmConsumo.idreserva= tablalistado.getValueAt(fila, 0).toString();
+        frmConsumo.cliente= tablalistado.getValueAt(fila,4).toString();
+        
+        frmConsumo form = new frmConsumo();
+        
+        frmInicio.escritorio.add(form);
+        form.setVisible(true);
+        form.toFront();
+    }//GEN-LAST:event_btnconsumoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -741,6 +763,8 @@ public class frmReserva extends javax.swing.JInternalFrame {
         btnbuscacliente.setEnabled(false);
         btnbuscahabitacion.setEnabled(false);
         
+        btnconsumo.setEnabled(false);
+        
         btnguardar.setEnabled(false);
         btneliminar.setEnabled(false);
         btncancelar.setEnabled(false);
@@ -769,6 +793,8 @@ public class frmReserva extends javax.swing.JInternalFrame {
         btnbuscacliente.setEnabled(true);
         btnbuscahabitacion.setEnabled(true);
 
+        btnconsumo.setEnabled(true);
+        
         btnguardar.setEnabled(true);
         btneliminar.setEnabled(true);
         btncancelar.setEnabled(true);
@@ -824,6 +850,7 @@ public class frmReserva extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnbuscahabitacion;
     private javax.swing.JToggleButton btnbuscar;
     private javax.swing.JToggleButton btncancelar;
+    private javax.swing.JButton btnconsumo;
     private javax.swing.JToggleButton btneliminar;
     private javax.swing.JToggleButton btnguardar;
     private javax.swing.JToggleButton btnnuevo;

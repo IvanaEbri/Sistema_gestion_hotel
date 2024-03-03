@@ -300,7 +300,7 @@ public class frmInicio extends javax.swing.JFrame {
     private javax.swing.JMenuItem acercaMenuItem;
     private javax.swing.JMenuItem ayudaMenuItem;
     private javax.swing.JMenuItem clienteMenuItem;
-    private javax.swing.JDesktopPane escritorio;
+    public static javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenuItem habitacionMenuItem;
     private javax.swing.JMenuItem jMenuItem1;
     public static javax.swing.JLabel lblacceso;

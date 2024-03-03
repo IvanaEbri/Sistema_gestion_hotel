@@ -16,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Ivana
  */
-public class frmConsumo extends javax.swing.JFrame {
+public class frmConsumo extends javax.swing.JInternalFrame {
 
     public static String idreserva;
     public static String cliente;
@@ -76,7 +76,8 @@ public class frmConsumo extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         txtprecio = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setIconifiable(true);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("Consumo");
@@ -412,6 +413,8 @@ public class frmConsumo extends javax.swing.JFrame {
         int opcion = JOptionPane.showConfirmDialog(getParent(), "¿Desea cerrar la ventana?", "Salir", 2);
 
         if (opcion == 0) {
+            idreserva="";
+            cliente="";
             frmConsumo.this.dispose();
         }
     }//GEN-LAST:event_btnsalirActionPerformed
@@ -570,6 +573,7 @@ public class frmConsumo extends javax.swing.JFrame {
     }
 
     private void inhabilitar() {
+        txtidconsumo.setVisible(false);
         txtidproducto.setVisible(false);
         txtnombreproducto.setEnabled(false);
         txtidreserva.setVisible(false);
@@ -587,6 +591,7 @@ public class frmConsumo extends javax.swing.JFrame {
     }
 
     private void habilitar() {
+        txtidconsumo.setVisible(false);
         txtidproducto.setVisible(false);
         txtnombreproducto.setEnabled(false);
         txtidreserva.setVisible(false);
