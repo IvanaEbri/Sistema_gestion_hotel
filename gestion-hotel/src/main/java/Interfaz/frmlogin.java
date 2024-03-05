@@ -6,8 +6,9 @@ package Interfaz;
 
 import Datos.vtrabajador;
 import Logica.ftrabajador;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -24,7 +25,7 @@ public class frmLogin extends javax.swing.JFrame {
         this.setVisible(true);
         this.setTitle("Inicio de sesión");
         this.setLocationRelativeTo(null);
-        
+               
     }
 
     /**
@@ -46,7 +47,7 @@ public class frmLogin extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         table = new javax.swing.JScrollPane();
         tablalistado = new javax.swing.JTable();
-        jLabel4 = new javax.swing.JLabel();
+        icollavero = new javax.swing.JLabel();
         lblincorrecto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -103,8 +104,6 @@ public class frmLogin extends javax.swing.JFrame {
         ));
         table.setViewportView(tablalistado);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/archivo.png"))); // NOI18N
-
         lblincorrecto.setForeground(new java.awt.Color(255, 0, 51));
         lblincorrecto.setText("El usuario y/o contraseña es incorrecto");
 
@@ -135,7 +134,7 @@ public class frmLogin extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(lblincorrecto)
                         .addGap(18, 18, 18)))
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(icollavero, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         frmloginLayout.setVerticalGroup(
@@ -143,7 +142,7 @@ public class frmLogin extends javax.swing.JFrame {
             .addGroup(frmloginLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addGroup(frmloginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(icollavero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(frmloginLayout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
@@ -238,6 +237,10 @@ public class frmLogin extends javax.swing.JFrame {
                 screen.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 screen.table.setVisible(false);
                 screen.lblincorrecto.setVisible(false);
+                
+                //screen.icollavero.setIcon(new ImageIcon(getClass().getResource("/Files/key_house.png")));
+                //screen.btningresar.setIcon(new ImageIcon(getClass().getResource("/Files/key.png")));
+
             }
         });
     }
@@ -246,10 +249,10 @@ public class frmLogin extends javax.swing.JFrame {
     private javax.swing.JButton btningresar;
     private javax.swing.JButton btnsalir;
     private javax.swing.JPanel frmlogin;
+    private javax.swing.JLabel icollavero;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel lblincorrecto;
     private javax.swing.JTable tablalistado;
     private javax.swing.JScrollPane table;

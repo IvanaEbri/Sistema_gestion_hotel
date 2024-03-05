@@ -50,7 +50,6 @@ public class frmProducto extends javax.swing.JInternalFrame {
         lblregistros = new javax.swing.JLabel();
         btnbuscar = new javax.swing.JToggleButton();
         btneliminar = new javax.swing.JToggleButton();
-        btnsalir = new javax.swing.JToggleButton();
         jPanel1 = new javax.swing.JPanel();
         btnnuevo = new javax.swing.JToggleButton();
         btnguardar = new javax.swing.JToggleButton();
@@ -65,6 +64,7 @@ public class frmProducto extends javax.swing.JInternalFrame {
         txtprecio = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtdescripcion = new javax.swing.JTextArea();
+        btnsalir = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setIconifiable(true);
@@ -114,49 +114,39 @@ public class frmProducto extends javax.swing.JInternalFrame {
             }
         });
 
-        btnsalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/salida.png"))); // NOI18N
-        btnsalir.setText("Salir");
-        btnsalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnsalirActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnbuscar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btneliminar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnsalir)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblregistros)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtbuscar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnbuscar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btneliminar))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(lblregistros)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(0, 0, 0)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnbuscar)
-                    .addComponent(btneliminar)
-                    .addComponent(btnsalir))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(btneliminar))
+                .addGap(0, 0, 0)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 372, Short.MAX_VALUE)
+                .addGap(0, 0, 0)
                 .addComponent(lblregistros))
         );
 
@@ -285,7 +275,7 @@ public class frmProducto extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtprecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 186, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 184, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnnuevo)
                     .addComponent(btnguardar)
@@ -293,13 +283,23 @@ public class frmProducto extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
+        btnsalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/salida.png"))); // NOI18N
+        btnsalir.setText("Salir");
+        btnsalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsalirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout frmProductoLayout = new javax.swing.GroupLayout(frmProducto);
         frmProducto.setLayout(frmProductoLayout);
         frmProductoLayout.setHorizontalGroup(
             frmProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(frmProductoLayout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnsalir)
+                .addContainerGap())
             .addGroup(frmProductoLayout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(0, 0, 0)
@@ -308,8 +308,10 @@ public class frmProducto extends javax.swing.JInternalFrame {
         frmProductoLayout.setVerticalGroup(
             frmProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(frmProductoLayout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(frmProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnsalir))
+                .addGap(0, 0, 0)
                 .addGroup(frmProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -329,56 +331,33 @@ public class frmProducto extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tablalistadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablalistadoMouseClicked
-        btnguardar.setText("Editar");
-        habilitar();
-        btneliminar.setEnabled(true);
-        accion = "editar";
+    private void txtdescripcionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtdescripcionKeyTyped
+        if (evt.getKeyChar() == '\n') {
+            // Enter key pressed, transfer focus to the next component
+            txtdescripcion.transferFocus();
+            evt.consume(); // Consumes the Enter key event to prevent it from being added to the text area
+        }
+    }//GEN-LAST:event_txtdescripcionKeyTyped
 
-        int fila = tablalistado.rowAtPoint(evt.getPoint());
+    private void txtprecioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtprecioActionPerformed
+        txtprecio.transferFocus();
+    }//GEN-LAST:event_txtprecioActionPerformed
 
-        txtidproducto.setText(tablalistado.getValueAt(fila, 0).toString());
-        txtnombre.setText(tablalistado.getValueAt(fila, 1).toString());
-        txtdescripcion.setText(tablalistado.getValueAt(fila, 2).toString());
-        cbounidad.setSelectedItem(tablalistado.getValueAt(fila, 3).toString());
-        txtprecio.setText(tablalistado.getValueAt(fila, 4).toString());
-    }//GEN-LAST:event_tablalistadoMouseClicked
+    private void cbounidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbounidadActionPerformed
+        cbounidad.transferFocus();
+    }//GEN-LAST:event_cbounidadActionPerformed
 
-    private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
-        mostrar(txtbuscar.getText());
+    private void txtnombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnombreActionPerformed
+        txtnombre.transferFocus();
+    }//GEN-LAST:event_txtnombreActionPerformed
+
+    private void txtidproductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtidproductoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtidproductoActionPerformed
+
+    private void btncancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelarActionPerformed
         inhabilitar();
-    }//GEN-LAST:event_btnbuscarActionPerformed
-
-    private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
-        if (!txtidproducto.getText().equals("")) {
-            int confirmacion = JOptionPane.showConfirmDialog(getParent(), " ¿Está seguro de eliminar el producto?", "Confirmar", 2);
-
-            //0 es que confirmo en el cuadro de dialogo por lo que busca el objeto y lo elimina
-            if (confirmacion == 0) {
-                fproducto func = new fproducto();
-                vproducto dts = new vproducto();
-
-                dts.setIdproducto(Integer.parseInt(txtidproducto.getText()));
-                func.eliminar(dts);
-                mostrar("");
-                inhabilitar();
-            }
-        }
-    }//GEN-LAST:event_btneliminarActionPerformed
-
-    private void btnsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirActionPerformed
-        int opcion = JOptionPane.showConfirmDialog(getParent(), "¿Desea cerrar la ventana?", "Salir", 2);
-
-        if (opcion == 0) {
-            frmProducto.this.dispose();
-        }
-    }//GEN-LAST:event_btnsalirActionPerformed
-
-    private void btnnuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnnuevoActionPerformed
-        habilitar();
-        btnguardar.setText("Guardar");
-        accion = "guardar";
-    }//GEN-LAST:event_btnnuevoActionPerformed
+    }//GEN-LAST:event_btncancelarActionPerformed
 
     private void btnguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarActionPerformed
         if (txtnombre.getText().length() == 0) {
@@ -419,33 +398,56 @@ public class frmProducto extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btnguardarActionPerformed
 
-    private void btncancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelarActionPerformed
-        inhabilitar();
-    }//GEN-LAST:event_btncancelarActionPerformed
+    private void btnnuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnnuevoActionPerformed
+        habilitar();
+        btnguardar.setText("Guardar");
+        accion = "guardar";
+    }//GEN-LAST:event_btnnuevoActionPerformed
 
-    private void txtidproductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtidproductoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtidproductoActionPerformed
+    private void btnsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirActionPerformed
+        int opcion = JOptionPane.showConfirmDialog(getParent(), "¿Desea cerrar la ventana?", "Salir", 2);
 
-    private void txtnombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnombreActionPerformed
-        txtnombre.transferFocus();
-    }//GEN-LAST:event_txtnombreActionPerformed
-
-    private void cbounidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbounidadActionPerformed
-        cbounidad.transferFocus();
-    }//GEN-LAST:event_cbounidadActionPerformed
-
-    private void txtprecioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtprecioActionPerformed
-        txtprecio.transferFocus();
-    }//GEN-LAST:event_txtprecioActionPerformed
-
-    private void txtdescripcionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtdescripcionKeyTyped
-        if (evt.getKeyChar() == '\n') {
-            // Enter key pressed, transfer focus to the next component
-            txtdescripcion.transferFocus();
-            evt.consume(); // Consumes the Enter key event to prevent it from being added to the text area
+        if (opcion == 0) {
+            frmProducto.this.dispose();
         }
-    }//GEN-LAST:event_txtdescripcionKeyTyped
+    }//GEN-LAST:event_btnsalirActionPerformed
+
+    private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
+        if (!txtidproducto.getText().equals("")) {
+            int confirmacion = JOptionPane.showConfirmDialog(getParent(), " ¿Está seguro de eliminar el producto?", "Confirmar", 2);
+
+            //0 es que confirmo en el cuadro de dialogo por lo que busca el objeto y lo elimina
+            if (confirmacion == 0) {
+                fproducto func = new fproducto();
+                vproducto dts = new vproducto();
+
+                dts.setIdproducto(Integer.parseInt(txtidproducto.getText()));
+                func.eliminar(dts);
+                mostrar("");
+                inhabilitar();
+            }
+        }
+    }//GEN-LAST:event_btneliminarActionPerformed
+
+    private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
+        mostrar(txtbuscar.getText());
+        inhabilitar();
+    }//GEN-LAST:event_btnbuscarActionPerformed
+
+    private void tablalistadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablalistadoMouseClicked
+        btnguardar.setText("Editar");
+        habilitar();
+        btneliminar.setEnabled(true);
+        accion = "editar";
+
+        int fila = tablalistado.rowAtPoint(evt.getPoint());
+
+        txtidproducto.setText(tablalistado.getValueAt(fila, 0).toString());
+        txtnombre.setText(tablalistado.getValueAt(fila, 1).toString());
+        txtdescripcion.setText(tablalistado.getValueAt(fila, 2).toString());
+        cbounidad.setSelectedItem(tablalistado.getValueAt(fila, 3).toString());
+        txtprecio.setText(tablalistado.getValueAt(fila, 4).toString());
+    }//GEN-LAST:event_tablalistadoMouseClicked
 
     /**
      * @param args the command line arguments

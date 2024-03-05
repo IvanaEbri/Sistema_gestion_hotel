@@ -92,4 +92,8 @@ public class vhabitacion {
     public void setTipo_habitacion(String tipo_habitacion) {
         this.tipo_habitacion = tipo_habitacion;
     }
+
+    public void setIdHabitacion(int parseInt) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
