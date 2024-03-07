@@ -515,7 +515,7 @@ public class frmPago extends javax.swing.JInternalFrame {
 
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
         if (!txtidpago.getText().equals("")) {
-            int confirmacion = JOptionPane.showConfirmDialog(getParent(), " ¿Está seguro de eliminar el pago seleccionado?", "Confirmar", 2);
+            int confirmacion = JOptionPane.showConfirmDialog(getParent(), " ¿Está seguro de eliminar el pago seleccionado?", "Confirmar", JOptionPane.YES_NO_OPTION);
 
             //0 es que confirmo en el cuadro de dialogo por lo que busca el objeto y lo elimina
             if (confirmacion == 0) {
@@ -531,7 +531,7 @@ public class frmPago extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btneliminarActionPerformed
 
     private void btnsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirActionPerformed
-        int opcion = JOptionPane.showConfirmDialog(getParent(), "¿Desea cerrar la ventana?", "Salir", 2);
+        int opcion = JOptionPane.showConfirmDialog(getParent(), "¿Desea cerrar la ventana?", "Salir", JOptionPane.YES_NO_OPTION);
 
         if (opcion == 0) {
             frmPago.this.dispose();
@@ -594,8 +594,8 @@ public class frmPago extends javax.swing.JInternalFrame {
                 fhabitacion func2 = new fhabitacion();
                 vhabitacion dts2 = new vhabitacion();
                 
-                dts2.setIdHabitacion(Integer.parseInt(txtidhabitacion.getText()));
-                func2.ocupar(dts2);
+                dts2.setIdhabitacion(Integer.parseInt(txtidhabitacion.getText()));
+                func2.desocupar(dts2);
                 
                 //cancelar la reserva
                 freserva func3 = new freserva();

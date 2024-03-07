@@ -190,7 +190,7 @@ public class fhabitacion {
     }
     
     public boolean ocupar (vhabitacion dts){
-        sSQL="update habitacion set estado='Ocupado' where idhabitacion=?";
+        sSQL="update habitacion set estado='Ocupada' where idhabitacion=?";
         try {
             PreparedStatement pst= cn.prepareStatement(sSQL);
             pst.setInt(1,dts.getIdhabitacion());

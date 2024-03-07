@@ -293,6 +293,7 @@ public class frmLogin extends javax.swing.JFrame {
                                        
                 }
             } else {
+                this.txtpassword.setText("");
                 this.lblincorrecto.setVisible(true);
                 this.txtusuario.requestFocus();
             }

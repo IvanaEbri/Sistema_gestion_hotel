@@ -391,7 +391,7 @@ public class frmHabitacion extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirActionPerformed
-        int opcion = JOptionPane.showConfirmDialog(getParent(), "¿Desea cerrar la ventana?", "Salir", 2);
+        int opcion = JOptionPane.showConfirmDialog(getParent(), "¿Desea cerrar la ventana?", "Salir", JOptionPane.YES_NO_OPTION);
 
         if (opcion == 0) {
             frmHabitacion.this.dispose();
@@ -400,7 +400,7 @@ public class frmHabitacion extends javax.swing.JInternalFrame {
 
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
         if (!txtidhabitacion.getText().equals("")) {
-            int confirmacion = JOptionPane.showConfirmDialog(getParent(), " ¿Está seguro de eliminar la habitación?", "Confirmar", 2);
+            int confirmacion = JOptionPane.showConfirmDialog(getParent(), " ¿Está seguro de eliminar la habitación?", "Confirmar", JOptionPane.YES_NO_OPTION);
 
             //0 es que confirmo en el cuadro de dialogo por lo que busca el objeto y lo elimina
             if (confirmacion == 0) {

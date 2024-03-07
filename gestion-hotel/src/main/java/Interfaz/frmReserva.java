@@ -253,7 +253,7 @@ public class frmReserva extends javax.swing.JInternalFrame {
                                 .addComponent(btnguardar)
                                 .addGap(41, 41, 41)
                                 .addComponent(btncancelar)
-                                .addGap(0, 13, Short.MAX_VALUE))
+                                .addGap(0, 42, Short.MAX_VALUE))
                             .addComponent(cbotipo_reserva, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(dcfecha_reserva, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
@@ -277,10 +277,10 @@ public class frmReserva extends javax.swing.JInternalFrame {
                         .addGap(29, 29, 29)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cboestado, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(txtcosto_alojamiento, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(dcfecha_salida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(dcfecha_ingreso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(dcfecha_ingreso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jScrollPane2))))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -329,13 +329,15 @@ public class frmReserva extends javax.swing.JInternalFrame {
                     .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cboestado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(35, 35, 35)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnnuevo)
                     .addComponent(btnguardar)
@@ -404,7 +406,7 @@ public class frmReserva extends javax.swing.JInternalFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 602, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 672, Short.MAX_VALUE)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -455,16 +457,17 @@ public class frmReserva extends javax.swing.JInternalFrame {
         frmReservaLayout.setHorizontalGroup(
             frmReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(frmReservaLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(frmReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(frmReservaLayout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnsalir))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnsalir)
+                        .addGap(6, 6, 6))
                     .addGroup(frmReservaLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, 0))
         );
         frmReservaLayout.setVerticalGroup(
@@ -490,8 +493,8 @@ public class frmReserva extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(frmReserva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(frmReserva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -515,7 +518,7 @@ public class frmReserva extends javax.swing.JInternalFrame {
             return;
         }
         if (txtcosto_alojamiento.getText().length() == 0) {
-            JOptionPane.showConfirmDialog(getParent(), "Debe ingresar un cliente");
+            JOptionPane.showConfirmDialog(getParent(), "Debe ingresar el costo del alojamiento");
             txtcosto_alojamiento.requestFocus();
             return;
         }
@@ -540,21 +543,25 @@ public class frmReserva extends javax.swing.JInternalFrame {
         
         dts.setCosto_alojamiento(Double.parseDouble(txtcosto_alojamiento.getText()));
         
+        dts.setObservacion(txtaobservaciones.getText());
+        
         int seleccionado1 = cboestado.getSelectedIndex();
-        dts.setEstado((String) cboestado.getItemAt(seleccionado1));
+        dts.setEstado(cboestado.getItemAt(seleccionado1));
 
         if (accion.equals("guardar")) {
             if (func.insertar(dts)) {
-                JOptionPane.showMessageDialog(getParent(), "La reserva fue registrada satisfactoriamente");
-                mostrar("");
-                inhabilitar();
                 
                 //ocupar habitacion al crear la reserva
                 fhabitacion func3 = new fhabitacion();
                 vhabitacion dts3= new vhabitacion();
                 
-                dts3.setIdHabitacion(Integer.parseInt(txtidhabitacion.getText()));
+                dts3.setIdhabitacion(Integer.parseInt(txtidhabitacion.getText()));
                 func3.ocupar(dts3);
+                
+                JOptionPane.showMessageDialog(getParent(), "La reserva fue registrada satisfactoriamente");
+                mostrar("");
+                inhabilitar();
+                
             }
         } else if (accion.equals("editar")) {
             dts.setIdreserva(Integer.parseInt(txtidreserva.getText()));
@@ -610,7 +617,7 @@ public class frmReserva extends javax.swing.JInternalFrame {
         txtcosto_alojamiento.setText(tablalistado.getValueAt(fila, 11).toString());
         txtaobservaciones.setText(tablalistado.getValueAt(fila, 12).toString());
         
-        cboestado.setSelectedItem(tablalistado.getValueAt(fila, 13).toString());
+        cboestado.setSelectedItem( tablalistado.getValueAt(fila, 13).toString());
         
     }//GEN-LAST:event_tablalistadoMouseClicked
 
@@ -621,7 +628,7 @@ public class frmReserva extends javax.swing.JInternalFrame {
 
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
         if (!txtidreserva.getText().equals("")) {
-            int confirmacion = JOptionPane.showConfirmDialog(getParent(), " ¿Está seguro de eliminar la reserva?", "Confirmar", 2);
+            int confirmacion = JOptionPane.showConfirmDialog(getParent(), " ¿Está seguro de eliminar la reserva?", "Confirmar", JOptionPane.YES_NO_OPTION);
 
             //0 es que confirmo en el cuadro de dialogo por lo que busca el objeto y lo elimina
             if (confirmacion == 0) {
@@ -637,7 +644,7 @@ public class frmReserva extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btneliminarActionPerformed
 
     private void btnsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirActionPerformed
-        int opcion = JOptionPane.showConfirmDialog(getParent(), "¿Desea cerrar la ventana?", "Salir", 2);
+        int opcion = JOptionPane.showConfirmDialog(getParent(), "¿Desea cerrar la ventana?", "Salir", JOptionPane.YES_NO_OPTION);
 
         if (opcion == 0) {
             frmReserva.this.dispose();
@@ -803,6 +810,7 @@ public class frmReserva extends javax.swing.JInternalFrame {
         btnbuscahabitacion.setEnabled(false);
         
         btnconsumo.setEnabled(false);
+        btnpago.setEnabled(false);
         
         btnguardar.setEnabled(false);
         btneliminar.setEnabled(false);
@@ -833,6 +841,7 @@ public class frmReserva extends javax.swing.JInternalFrame {
         btnbuscahabitacion.setEnabled(true);
 
         btnconsumo.setEnabled(true);
+        btnpago.setEnabled(true);
         
         btnguardar.setEnabled(true);
         btneliminar.setEnabled(true);
@@ -852,7 +861,8 @@ public class frmReserva extends javax.swing.JInternalFrame {
             tablalistado.setModel(modelo);
             tablalistado.getTableHeader().setReorderingAllowed(false);
             ocultar_columna();
-
+            
+            System.err.println(tablalistado.getValueAt(1,13));
             lblregistros.setText("Total registros: " + Integer.toString(func.totalregistros));
         } catch (Exception e) {
             JOptionPane.showConfirmDialog(getParent(), e);

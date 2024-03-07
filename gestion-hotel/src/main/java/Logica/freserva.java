@@ -20,9 +20,9 @@ public class freserva {
     //adapto el codigo de fhabitacion al producto
     public DefaultTableModel mostrar(String buscar){
         DefaultTableModel modelo;
-        String[] titulos={"ID","Id Habitacion","Numero","Id Cliente","Cliente","Id Trabajador",
+        String[] titulos={"ID","Id Habitacion","N° Habitacion","Id Cliente","Cliente","Id Trabajador",
             "Trabajador", "Tipo Reserva","Fecha Reserva","Fecha Ingreso", "Fecha Salida",
-            "Costo","Estado"};
+            "Costo","Observaciones","Estado"};
         String[] registro = new String [14];
 
         totalregistros=0;
@@ -62,6 +62,7 @@ public class freserva {
                 //añado la fila a la tabla
                 totalregistros=totalregistros+1;
                 modelo.addRow(registro);
+                
             }
 
             return modelo;
